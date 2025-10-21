@@ -69,8 +69,8 @@ a:active{
     margin-right: 10;
 }
 .highlight{
-    background-color: rgb(56, 154, 100);
-    color: rgb(196, 84, 84);
+    background-color: rgb(85, 158, 136);
+    color: rgb(227, 230, 242);
     padding:3px;
     border-radius:3px;
     font-weight: bold;
@@ -85,6 +85,16 @@ a:active{
     margin-top: 70px;
     text-align:center;
 }
+#sidebar_fence{
+    background-color: rgb(247, 242, 242);
+    width: 290px;
+    line-height: 2.25em;
+    border: 2px solid rgb(0, 0, 0);
+    float: left;
+    margin: 12px;
+    margin-top: 45px;
+    text-align:center;
+}
 #sidebar h3{
     border: none;
     padding:5px;
@@ -94,6 +104,17 @@ a:active{
     color: rgb(255, 255, 255);
     float: center;
 }
+
+#sidebar_fence h3{
+    border: none;
+    padding:5px;
+    margin: 5px auto;
+    margin-top: 15px;
+    background-color: rgb(48, 47, 47);
+    color: rgb(255, 255, 255);
+    float: center;
+}
+
 li{
     font-style: italic;
 }
@@ -112,7 +133,7 @@ li{
         margin: 0;
         border:none;
         padding: 0;
-        background-color: rgb(168, 157, 157);
+        background-color: rgb(162, 171, 182);
     }
     p, #p2, h3{
         padding: 20px;
