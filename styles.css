@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(129, 155, 171);
+    background-image: url(images/grid.jpeg);
     font-family: sans-serif;
     color:rgb(0,0,1);
     margin: 0;
@@ -8,11 +8,11 @@ body{
     width: 900px;
     margin:0 auto;
     padding: 30px 60px;
-    border-left: 6px double black;
-    border-right: 6px double black;
+    border-left: 7px double black;
+    border-right: 7px double black;
 }
 h1{
-    background-color:rgb(226, 221, 221);
+    background-color:rgb(255, 255, 255);
     border: 3px solid;
     border-radius: 15px;
     padding: 20px;
@@ -37,7 +37,7 @@ h3{
 p{
     line-height: 3.3em;
     color:rgb(36, 30, 44);
-    background-color: rgb(199, 197, 197);
+    background-color: rgb(179, 176, 176);
     padding: 20px; 
     border: 2px solid rgb(76, 74, 74);
     border-radius: 10px;
@@ -76,7 +76,7 @@ a:active{
     font-weight: bold;
 }
 #sidebar{
-    background-color: rgb(247, 242, 242);
+    background-color: rgb(255, 255, 255);
     width: 292px;
     line-height: 2.25em;
     border: 2px solid rgb(0, 0, 0);
@@ -86,7 +86,7 @@ a:active{
     text-align:center;
 }
 #sidebar_fence{
-    background-color: rgb(247, 242, 242);
+    background-color: rgb(255, 255, 255);
     width: 290px;
     line-height: 2.25em;
     border: 2px solid rgb(0, 0, 0);
@@ -154,4 +154,64 @@ li{
     }
 }
 
-/* classes use . like <span class="highlight"> if there is .highlight */
+body, button {
+    cursor: url('/images/newcursor.png') 50 50, auto;
+}
+a, a:link, a:visited {
+    cursor: url('/images/Screenshot_2025-10-20_8.06.15_PM-removebg-preview.png'), pointer;
+}
+
+/* ...existing code... */
+
+body, button {
+    /* use relative paths (no leading slash) */
+    cursor: url('images/newcursor.png') 50 50, auto;
+}
+a, a:link, a:visited {
+    cursor: url('images/Screenshot_2025-10-20_8.06.15_PM-removebg-preview.png'), pointer;
+}
+
+// ...existing code...
+
+#container{
+    /* ...existing code... */
+    position: relative;
+    z-index: 2; /* keep content above decorations */
+}
+
+/* put decorations on the html element and fix them to the viewport */
+html::before,
+html::after {
+    content: "";
+    position: fixed;          /* fixed to viewport — won't move on scroll */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 300px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;     /* don't block clicks */
+    opacity: 0.95;
+    z-index: 0;
+}
+
+html::before {
+    left: 30px;
+    background-image: url('images/Screenshot_2025-10-20_8.20.09_PM-removebg-preview.png');
+}
+
+html::after {
+    right: 30px;
+    background-image: url('images/Screenshot_2025-10-20_8.20.09_PM-removebg-preview.png');
+}
+
+/* hide decorations on small screens */
+@media (max-width: 768px){
+    html::before,
+    html::after {
+        display: none;
+    }
+}
+
+
